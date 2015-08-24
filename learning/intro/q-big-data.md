@@ -4,24 +4,26 @@
 * Discuss and determine a ranking in terms of "bigness".
 * Fill the template below. Replace all (( )) with your answers.
 
-## Rank 1: ((name of the dataset))
+## Rank 1: ((Amazon))
 
-(( a brief description of the dataset))
+(( These data sets include photos, text, url links, and personal information.)
 
-((a brief justification why this dataset is bigger than the next one))
+((Huge ammount of traffic))
 
-## Rank 2: ((name of the dataset))
+## Rank 2: ((Google Maps/Twitter/Facebook))
 
-(( a brief description of the dataset))
+((Photos, Tweets, url links, vidoes, and personal information))
 
-((a brief justification why this dataset is bigger than the next one))
+((Photos and videos are large))
 
-## Rank 3: ((name of the dataset))
+## Rank 3: ((Government Data Sets))
 
-(( a brief description of the dataset))
+((Personal information, tax information, work history.))
 
-((a brief justification why this dataset is bigger than the next one))
+((There are a large number of people in the U.S. and this data is held on to for a long time.))
 
-## Rank 4: ((name of the dataset))
+## Rank 4: ((Scientific Data Sets))
 
-(( a brief description of the dataset))
+((Scientific data that may be recieved from a scientific mission e.g. satellite mission))
+
+((There is a constant flow of information from a satellite to the Earth.))
