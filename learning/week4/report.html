@@ -48,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.5.1" data-basepath="../.." data-revision="Thu Sep 17 2015 17:19:45 GMT-0600 (MDT)">
+    <div class="book" data-level="1.5.1" data-basepath="../.." data-revision="Sun Sep 20 2015 21:51:40 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -705,26 +705,127 @@ use any for loop.</p>
 will be able to independently reproduce these solutions when asked to do so.
 Coming up, we will incorporate variations of these questions into a future hackathon
  and you are expected to be capable of reproducing and adapting your solutions.</p>
-<h1 id="-question-1-by-name">(Question 1) by (Name)</h1>
+<h1 id="how-many-courses-in-iphy-that-have-4-credit-hours-by-fadhil">How many courses in IPHY that have 4 credit hours? by Fadhil</h1>
 <p><pre>
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
+<span class="keyword">var</span> course =_.filter(data, <span class="keyword">function</span>(n){
+  <span class="keyword">return</span> n[<span class="string">&apos;CrsPBADept&apos;</span>] == <span class="string">&apos;IPHY&apos;</span>
+})
+<span class="keyword">var</span> hour = _.filter(course, <span class="keyword">function</span>(d){
+  <span class="keyword">return</span> d[<span class="string">&apos;Hours&apos;</span>] == <span class="number">4</span>
+})
+
+<span class="keyword">return</span> _.size(hour)
 </pre></p>
-<h1 id="-question-2-by-name">(Question 2) by (Name)</h1>
+<p>9 courses.</p>
+<h1 id="which-departments-offer-the-most-4000-level-classes-by-brian">Which departments offer the most 4000 level classes? by Brian</h1>
 <p><pre>
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
+<span class="keyword">var</span> groups = _.groupBy(data, <span class="keyword">function</span>(college){
+  <span class="keyword">return</span> college[<span class="string">&apos;Subject&apos;</span>]
+})
+
+<span class="keyword">var</span> courseLevels = _.mapValues(groups, <span class="keyword">function</span>(a){
+  <span class="keyword">return</span> _.map(a, <span class="keyword">function</span>(b){
+  <span class="keyword">return</span> b[<span class="string">&apos;Course&apos;</span>]
+  })
+})
+<span class="keyword">var</span> count = <span class="number">0</span>
+<span class="keyword">var</span> levelCount = _.mapValues(courseLevels, <span class="keyword">function</span>(level){
+  count = <span class="number">0</span>
+  <span class="keyword">return</span> _.map(level, <span class="keyword">function</span>(n){
+  <span class="keyword">if</span>(n &gt;= <span class="number">4000</span> &amp;&amp; n &lt; <span class="number">5000</span>){
+  count++
+    }
+    <span class="keyword">return</span> count
+  })
+})
+<span class="keyword">var</span> result = _.mapValues(levelCount, <span class="keyword">function</span>(n){
+  <span class="keyword">return</span> _.max(n)
+})
+<span class="keyword">return</span> _.pick(result, <span class="keyword">function</span>(number){
+  <span class="keyword">return</span> number == _.max(result)
+})
 </pre></p>
-<h1 id="-question-3-by-name">(Question 3) by (Name)</h1>
+<table>
+
+    <tr>
+        <td>PSYC</td>
+        <td>57</td>
+    </tr>
+
+</table>
+
+
+<h1 id="which-department-has-the-highest-enrollment-by-tristan">Which department has the highest enrollment by Tristan</h1>
 <p><pre>
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
+<span class="keyword">var</span> groups = _.groupBy(data, <span class="keyword">function</span>(college){
+    <span class="keyword">return</span> college[<span class="string">&apos;Subject&apos;</span>]
+})
+<span class="keyword">var</span> courseEnroll = _.mapValues(groups, <span class="keyword">function</span>(a){
+    <span class="keyword">return</span> _.map(a, <span class="keyword">function</span>(b){
+        <span class="keyword">return</span> b[<span class="string">&apos;N&apos;</span>][<span class="string">&apos;ENROLL&apos;</span>]
+    })
+})
+<span class="keyword">var</span> enroll = _.mapValues(courseEnroll, <span class="keyword">function</span>(enrolls){
+    <span class="keyword">return</span> _.sum(enrolls)
+})
+<span class="keyword">return</span> _.pick(enroll, <span class="keyword">function</span>(number){
+    <span class="keyword">return</span> number == _.max(enroll)
+})
 </pre></p>
-<h1 id="-question-4-by-name">(Question 4) by (Name)</h1>
+<table>
+
+    <tr>
+        <td>MATH</td>
+        <td>8725</td>
+    </tr>
+
+</table>
+
+<h1 id="what-instructor-s-course-has-the-highest-enrollment-by-zhilli">What instructor&apos;s course has the highest enrollment? by Zhilli</h1>
 <p><pre>
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
+<span class="keyword">var</span> <span class="keyword">list</span> = _.map(data, <span class="keyword">function</span>(course){
+  <span class="keyword">var</span> instructors=course[<span class="string">&apos;Instructors&apos;</span>]
+  <span class="keyword">var</span> enroll=course[<span class="string">&apos;N&apos;</span>][<span class="string">&apos;ENROLL&apos;</span>]
+  <span class="keyword">var</span> courseName=course[<span class="string">&apos;CourseTitle&apos;</span>]
+  <span class="keyword">return</span> _.map(instructors, <span class="keyword">function</span>(instructor){
+  <span class="keyword">return</span> {<span class="string">&quot;instructor&quot;</span>: instructor[<span class="string">&apos;name&apos;</span>], <span class="string">&quot;courseTitle&quot;</span>: courseName, <span class="string">&quot;enrollment&quot;</span>: enroll}
+  })
+})
+
+<span class="keyword">var</span> maxGroups= _.max(_.flatten(<span class="keyword">list</span>), <span class="keyword">function</span>(course){
+ <span class="keyword">return</span> course[<span class="string">&apos;enrollment&apos;</span>]
+})
+<span class="keyword">return</span> maxGroups
 </pre></p>
-<h1 id="-question-5-by-name">(Question 5) by (Name)</h1>
+<p>The professor is GRAVES, PHILIP E, the course title is Principles of Microeconomics.</p>
+<h1 id="what-instructor-has-the-highest-rating-by-andrew">What instructor has the highest rating? by Andrew</h1>
 <p><pre>
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
+<span class="keyword">var</span> <span class="keyword">list</span> = _.map(data, <span class="keyword">function</span>(course){
+  <span class="keyword">var</span> instructors=course[<span class="string">&apos;Instructors&apos;</span>]
+  <span class="keyword">var</span> enroll=course[<span class="string">&apos;AvgInstructor&apos;</span>]
+  <span class="keyword">return</span> _.map(instructors, <span class="keyword">function</span>(instructor){
+  <span class="keyword">return</span> {<span class="string">&quot;instructor&quot;</span>: instructor[<span class="string">&apos;name&apos;</span>], <span class="string">&quot;rating&quot;</span>: enroll}
+  })
+})
+
+<span class="keyword">var</span> maxGroups= _.max(_.flatten(<span class="keyword">list</span>), <span class="keyword">function</span>(course){
+ <span class="keyword">return</span> course[<span class="string">&apos;rating&apos;</span>]
+})
+<span class="keyword">return</span> maxGroups
 </pre></p>
+<table>
+
+    <tr>
+        <td>instructor</td>
+        <td>HOBBS, STEVEN L</td>
+    </tr>
+
+    <tr>
+        <td>rating</td>
+        <td>6</td>
+    </tr>
+
+</table>
 
                     
                     </section>
