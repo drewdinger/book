@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Intro | book</title>
+        <title>Report | book</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.2.0">
@@ -45,10 +45,8 @@
         
     
     
-    <link rel="next" href="../../learning/intro/q-big-data.html" />
     
-    
-    <link rel="prev" href="../../learning/index.html" />
+    <link rel="prev" href="../../hackathons/open/warmup.html" />
     
 
         <!-- head:end -->
@@ -56,7 +54,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.1" data-basepath="../.." data-revision="Wed Sep 30 2015 16:33:10 GMT-0600 (MDT)">
+    <div class="book" data-level="2.5.2" data-basepath="../.." data-revision="Wed Sep 30 2015 16:33:10 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -102,7 +100,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.1" data-path="learning/intro/index.html">
+        <li class="chapter " data-level="1.1" data-path="learning/intro/index.html">
             
                 
                     <a href="../../learning/intro/index.html">
@@ -739,7 +737,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5.2" data-path="hackathons/open/report.html">
+        <li class="chapter active" data-level="2.5.2" data-path="hackathons/open/report.html">
             
                 
                     <a href="../../hackathons/open/report.html">
@@ -869,13 +867,88 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="learning-challenge-intro">Learning Challenge: Intro</h1>
-<p>This introductory learning challenge has three questions.</p>
+                        <h1 id="report">Report</h1>
+<p>Use only Javascript and SVG to produce a data analysis / visualization report.</p>
+<h1 id="authors">Authors</h1>
+<p>This report is prepared by</p>
 <ul>
-<li>Q: What is big data? (Team)</li>
-<li>Q: Which programming language is the top favorite among the students in our class? (Team)</li>
-<li>Q: What programming languages have the most packages? (Individual)</li>
+<li><a href="github.com/pail4944">Parker Illig</a></li>
+<li><a href="github.com/drewdinger">Andrew Krodinger</a></li>
+<li><a href="link%20to%20github%20account">Full name</a></li>
 </ul>
+<p><a name="top"></a></p>
+<div id="autonav"></div>
+
+<p></p>
+<p>What are the classes that have the most students barely pass with a C?</p>
+<p><pre><code>var groups = _.groupBy(data, function(college){
+    return college[&apos;CourseTitle&apos;]
+})
+var courseEnroll = _.mapValues(groups, function(a){
+    return _.map(a, function(b){
+        return b[&apos;PCT&apos;][&apos;C&apos;]
+    })
+})
+var enroll = _.mapValues(courseEnroll, function(enrolls){
+    return _.sum(enrolls)
+})
+result = _.slice(_.sortByOrder(_.pairs(enroll),function(d){return d[1]},&apos;desc&apos;), 0, 10)
+return result</code></pre></p>
+<table>
+
+    <tr>
+        <td>First-Year Writing and Rhetoric</td>
+        <td>20.92</td>
+    </tr>
+
+    <tr>
+        <td>General Biology Laboratory 2</td>
+        <td>12.469999999999994</td>
+    </tr>
+
+    <tr>
+        <td>Human Anatomy Laboratory</td>
+        <td>11.55</td>
+    </tr>
+
+    <tr>
+        <td>Calculus 1</td>
+        <td>10.69</td>
+    </tr>
+
+    <tr>
+        <td>Laboratory in General Chemistry 1</td>
+        <td>10.56</td>
+    </tr>
+
+    <tr>
+        <td>Laboratory in General Chemistry 2</td>
+        <td>10.12</td>
+    </tr>
+
+    <tr>
+        <td>Topics in Writing</td>
+        <td>7.179999999999997</td>
+    </tr>
+
+    <tr>
+        <td>Quantitative Reasoning and Mathematical Skills</td>
+        <td>6.34</td>
+    </tr>
+
+    <tr>
+        <td>Calculus 2</td>
+        <td>5.880000000000001</td>
+    </tr>
+
+    <tr>
+        <td>Second-Year Spanish 1</td>
+        <td>5.579999999999999</td>
+    </tr>
+
+</table>
+
+
 
                     
                     </section>
@@ -886,10 +959,8 @@
         </div>
 
         
-        <a href="../../learning/index.html" class="navigation navigation-prev " aria-label="Previous page: Learning"><i class="fa fa-angle-left"></i></a>
+        <a href="../../hackathons/open/warmup.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Warmup"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="../../learning/intro/q-big-data.html" class="navigation navigation-next " aria-label="Next page: Q. Big data"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
