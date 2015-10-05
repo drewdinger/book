@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Intro | book</title>
+        <title>Mongodb Drills | book</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.2.0">
@@ -45,10 +45,10 @@
         
     
     
-    <link rel="next" href="../../learning/intro/q-big-data.html" />
+    <link rel="next" href="../../hackathons/index.html" />
     
     
-    <link rel="prev" href="../../learning/index.html" />
+    <link rel="prev" href="../../learning/week6/mongodb-setup.html" />
     
 
         <!-- head:end -->
@@ -56,7 +56,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.1" data-basepath="../.." data-revision="Mon Oct 05 2015 00:27:41 GMT-0600 (MDT)">
+    <div class="book" data-level="1.7.3" data-basepath="../.." data-revision="Mon Oct 05 2015 00:27:41 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -102,7 +102,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.1" data-path="learning/intro/index.html">
+        <li class="chapter " data-level="1.1" data-path="learning/intro/index.html">
             
                 
                     <a href="../../learning/intro/index.html">
@@ -514,7 +514,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.3" data-path="learning/week6/mongodb-drills.html">
+        <li class="chapter active" data-level="1.7.3" data-path="learning/week6/mongodb-drills.html">
             
                 
                     <a href="../../learning/week6/mongodb-drills.html">
@@ -935,13 +935,74 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="learning-challenge-intro">Learning Challenge: Intro</h1>
-<p>This introductory learning challenge has three questions.</p>
-<ul>
-<li>Q: What is big data? (Team)</li>
-<li>Q: Which programming language is the top favorite among the students in our class? (Team)</li>
-<li>Q: What programming languages have the most packages? (Individual)</li>
-</ul>
+                        <h1 id="mongodb-drills">Mongodb Drills</h1>
+<h2 id="1-find-the-listing-detail-information-for-the-evernote-app">1- Find the listing detail information for the Evernote app?</h2>
+<p><div class="mongodb"><h4>mongodb query</h4><pre><code>{&quot;n&quot;:&quot;com.evernote&quot;}</code></pre></div></p>
+<pre style="font-size:11px;line-height:1;max-height:300px;">[]</pre>
+
+<p>There are 0 apps.
+The star rating of the first Evernote app is: </p>
+<h2 id="2-how-many-apps-developed-by-go-launcher-ex">2- How many apps developed by GO Launcher EX?</h2>
+<p><div class="mongodb"><h4>mongodb query</h4><pre><code>{&quot;crt&quot;:&quot;GO Launcher EX&quot;},{&quot;n&quot;:1}</code></pre></div></p>
+<pre style="font-size:11px;line-height:1;max-height:300px;">[]</pre>
+
+<p>There are 0 apps.</p>
+<h2 id="3-how-many-apps-have-been-downloaded-more-than-10-000-000">3- How many apps have been downloaded more than 10,000,000?</h2>
+<p><div class="mongodb"><h4>mongodb query</h4><pre><code></code></pre></div></p>
+<pre style="font-size:11px;line-height:1;max-height:300px;">&quot;&quot;</pre>
+
+<p>(answer)</p>
+<h2 id="4-how-many-apps-have-the-word-share-in-their-description">4- How many apps have the word &quot;share&quot; in their description?</h2>
+<p>Hint: the desc field is indexed with a text index. Use the $text operator.</p>
+<p><div class="mongodb"><h4>mongodb query</h4><pre><code></code></pre></div></p>
+<pre style="font-size:11px;line-height:1;max-height:300px;">&quot;&quot;</pre>
+
+<p>(answer)</p>
+<h2 id="5-find-apps-that-are-categorized-in-any-of-the-following-categories-productivity-business-or-finance">5- Find apps that are categorized in any of the following categories: Productivity, Business, or Finance?</h2>
+<p>Hint: Use the $in operator.</p>
+<p><div class="mongodb"><h4>mongodb query</h4><pre><code></code></pre></div></p>
+<pre style="font-size:11px;line-height:1;max-height:300px;">&quot;&quot;</pre>
+
+<p>(answer)</p>
+<h2 id="6-find-apps-that-have-been-downloaded-10-000-000-or-more-but-have-star-rating-lower-than-3-stars">6- Find apps that have been downloaded 10,000,000 or more but have star rating lower than 3 stars?</h2>
+<p><div class="mongodb"><h4>mongodb query</h4><pre><code></code></pre></div></p>
+<pre style="font-size:11px;line-height:1;max-height:300px;">&quot;&quot;</pre>
+
+<p>There are  apps.</p>
+<p>Hint: The query matches one app in the dataset and the link to its Google Play listing page is:
+<a href="https://play.google.com/store/apps/details?id=" target="_blank">https://play.google.com/store/apps/details?id=</a> Read the reviews to find out why?</p>
+<h2 id="7-find-the-title-and-creator-of-apps-that-have-been-rated-above-4-stars-by-1-000-000-or-more-users">7- Find the title and creator of apps that have been rated above 4 stars by 1,000,000 or more users?</h2>
+<p><div class="mongodb"><h4>mongodb query</h4><pre><code></code></pre></div></p>
+<pre style="font-size:11px;line-height:1;max-height:300px;">&quot;&quot;</pre>
+
+<p>There are  apps.</p>
+<h2 id="8-find-apps-whose-content-rating-is-teen-but-not-categorized-in-any-of-the-following-categories-card-entertainment-comics-and-puzzle">8- Find apps whose content rating is Teen but not categorized in any of the following categories: Card, Entertainment, Comics, and Puzzle?</h2>
+<p><div class="mongodb"><h4>mongodb query</h4><pre><code></code></pre></div></p>
+<pre style="font-size:11px;line-height:1;max-height:300px;">&quot;&quot;</pre>
+
+<p>There are  apps.</p>
+<h2 id="9-find-the-title-category-download-count-and-star-rating-of-apps-with-the-phrase-in-app-purchase-in-their-description-and-download-count-greater-than-10-000-000">9- Find the title, category, download count, and star rating of apps with the phrase &quot;in-app purchase&quot; in their description and download count greater than 10,000,000?</h2>
+<p><div class="mongodb"><h4>mongodb query</h4><pre><code></code></pre></div></p>
+<pre style="font-size:11px;line-height:1;max-height:300px;">&quot;&quot;</pre>
+
+<p>There are  apps.</p>
+<h2 id="10-find-the-title-and-address-of-the-creator-of-apps-with-download-count-greater-than-1-000-000-and-star-rating-greater-than-4-5">10- Find the title and address of the creator of apps with download count greater than 1,000,000 and star rating greater than 4.5?</h2>
+<p>Hint: ensure that the results include apps that have creator address (not equal &quot;&quot;)</p>
+<p><div class="mongodb"><h4>mongodb query</h4><pre><code></code></pre></div></p>
+<pre style="font-size:11px;line-height:1;max-height:300px;">&quot;&quot;</pre>
+
+<p>There are  apps.</p>
+<h2 id="11-find-the-title-category-download-count-and-rating-of-apps-with-download-count-of-1-000-000-or-more-but-have-no-privacy-ststements">11- Find the title, category, download count, and rating of apps with download count of 1,000,000 or more but have no privacy ststements?</h2>
+<p><div class="mongodb"><h4>mongodb query</h4><pre><code></code></pre></div></p>
+<pre style="font-size:11px;line-height:1;max-height:300px;">&quot;&quot;</pre>
+
+<p>There are  apps.</p>
+<h2 id="12-find-apps-that-have-been-released-or-updated-this-month-september-2015">12- Find apps that have been released or updated this month (September 2015)?</h2>
+<p>Hint: You can use the $regex operator</p>
+<p><div class="mongodb"><h4>mongodb query</h4><pre><code></code></pre></div></p>
+<pre style="font-size:11px;line-height:1;max-height:300px;">&quot;&quot;</pre>
+
+<p>There are  apps</p>
 
                     
                     </section>
@@ -952,10 +1013,10 @@
         </div>
 
         
-        <a href="../../learning/index.html" class="navigation navigation-prev " aria-label="Previous page: Learning"><i class="fa fa-angle-left"></i></a>
+        <a href="../../learning/week6/mongodb-setup.html" class="navigation navigation-prev " aria-label="Previous page: Mongodb Setup"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../learning/intro/q-big-data.html" class="navigation navigation-next " aria-label="Next page: Q. Big data"><i class="fa fa-angle-right"></i></a>
+        <a href="../../hackathons/index.html" class="navigation navigation-next " aria-label="Next page: Hackathons"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
